@@ -1,3 +1,4 @@
+import API_CONFIG from '../config/api';
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import io, { Socket } from 'socket.io-client';
 import { useAuth } from './AuthContext';
@@ -28,7 +29,8 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      const newSocket = io('https://ai-group-discussion-platform.onrender.com');
+      const newSocket = io(API_CONFIG.socketURL);
+// Make sure to import API_CONFIG from '../config/api';
       
       newSocket.on('connect', () => {
         setIsConnected(true);

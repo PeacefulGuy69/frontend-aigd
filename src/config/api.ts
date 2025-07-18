@@ -1,7 +1,8 @@
 
+
 const API_CONFIG = {
-  baseURL: 'https://ai-group-discussion-platform.onrender.com',
-  socketURL: 'https://ai-group-discussion-platform.onrender.com'
+  baseURL: process.env.REACT_APP_API_URL || 'https://ai-group-discussion-platform.onrender.com',
+  socketURL: process.env.REACT_APP_SOCKET_URL || 'https://ai-group-discussion-platform.onrender.com'
 };
 
 export default API_CONFIG;

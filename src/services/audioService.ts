@@ -1,6 +1,7 @@
 import axios from 'axios';
+import API_CONFIG from '../config/api';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://ai-group-discussion-platform.onrender.com';
+const API_BASE_URL = API_CONFIG.baseURL;
 
 class AudioService {
   private getAuthHeaders() {
